@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uuid: 
+  username: MyString
+  password_digest: MyString
+  location: MyString
+  description: MyText
+  level: 1
+
+two:
+  uuid: 
+  username: MyString
+  password_digest: MyString
+  location: MyString
+  description: MyText
+  level: 1
