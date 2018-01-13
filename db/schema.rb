@@ -27,8 +27,13 @@ ActiveRecord::Schema.define(version: 20180109225905) do
   create_table "items", force: :cascade do |t|
     t.integer "price"
     t.string "status"
+    t.string "collector_type"
+    t.bigint "collector_id"
+    t.bigint "item_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["collector_type", "collector_id"], name: "index_items_on_collector_type_and_collector_id"
+    t.index ["item_type_id"], name: "index_items_on_item_type_id"
   end
 
   create_table "markets", force: :cascade do |t|
@@ -41,8 +46,16 @@ ActiveRecord::Schema.define(version: 20180109225905) do
 
   create_table "transactions", force: :cascade do |t|
     t.integer "price"
+    t.string "seller_type"
+    t.bigint "seller_id"
+    t.string "buyer_type"
+    t.bigint "buyer_id"
+    t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["buyer_type", "buyer_id"], name: "index_by_buyer"
+    t.index ["item_id"], name: "index_transactions_on_item_id"
+    t.index ["seller_type", "seller_id"], name: "index_by_seller"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,8 +72,10 @@ ActiveRecord::Schema.define(version: 20180109225905) do
 
   create_table "wallets", force: :cascade do |t|
     t.float "balance"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_wallets_on_user_id", unique: true
   end
 
 end
