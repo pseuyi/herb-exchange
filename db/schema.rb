@@ -14,9 +14,9 @@ ActiveRecord::Schema.define(version: 20180109225905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pgcrypto"
 
-  create_table "item_types", force: :cascade do |t|
-    t.uuid "uuid"
+  create_table "item_types", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "category"
@@ -36,8 +36,7 @@ ActiveRecord::Schema.define(version: 20180109225905) do
     t.index ["item_type_id"], name: "index_items_on_item_type_id"
   end
 
-  create_table "markets", force: :cascade do |t|
-    t.uuid "uuid"
+  create_table "markets", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", null: false
@@ -58,16 +57,15 @@ ActiveRecord::Schema.define(version: 20180109225905) do
     t.index ["seller_type", "seller_id"], name: "index_by_seller"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.uuid "uuid"
+  create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
+    t.string "name"
     t.string "location"
     t.text "description"
     t.integer "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["uuid"], name: "index_users_on_uuid"
   end
 
   create_table "wallets", force: :cascade do |t|
