@@ -1,7 +1,7 @@
 class CreateUsers < ActiveRecord::Migration[5.1]
   def change
-    create_table :users do |t|
-      t.uuid :uuid, index: true
+    enable_extension 'pgcrypto'
+    create_table :users, id: :uuid do |t|
       t.string :username
       t.string :password_digest
       t.string :name
