@@ -13,4 +13,6 @@
 
 class ItemType < ApplicationRecord
   has_many :items
+  has_attached_file :image, styles: { medium: "400x400>", thumb: "64x64>" }, default_url: "/images/:style/missing.png"
+  validates_attachment :image, presence: true, content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 end
