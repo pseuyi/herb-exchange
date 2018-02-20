@@ -48,6 +48,7 @@ Rails.application.configure do
   # Use s3 for storage
   config.paperclip_defaults = {
     :storage => :s3,
-    :bucket => 'herb-garden-attachments'
+    :bucket => 'herb-garden-attachments',
+    :s3_region => 'us-east-1'
   }
 end

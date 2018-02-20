@@ -2,10 +2,10 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  uuid            :uuid
+#  id              :uuid             not null, primary key
 #  username        :string
 #  password_digest :string
+#  name            :string
 #  location        :string
 #  description     :text
 #  level           :integer

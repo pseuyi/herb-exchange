@@ -2,8 +2,7 @@
 #
 # Table name: markets
 #
-#  id          :integer          not null, primary key
-#  uuid        :uuid
+#  id          :uuid             not null, primary key
 #  name        :string
 #  description :text
 #  created_at  :datetime         not null
