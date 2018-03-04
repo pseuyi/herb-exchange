@@ -16,6 +16,6 @@ class Api::V1::ItemTypesController < ApplicationController
   private
 
   def item_type_params
-    params.require(:item_type).permit(:name, :description, :category)
+    params.require(:item_type).permit(:name, :description, :category, :image)
   end
 end
