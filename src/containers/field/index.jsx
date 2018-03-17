@@ -12,16 +12,14 @@ class Field extends React.Component {
 
   render() {
     const { itemTypes } = this.props;
-
     return (
       <div>
         <p>green field</p>
-        <main>
-
+        <main className="field-grid">
+          {itemTypes && itemTypes.map(itemType => <Item key={itemType.id} item={itemType} fieldItem="/assets/bush.png"/>)}
+          {itemTypes && itemTypes.map(itemType => <Item key={itemType.id} item={itemType} fieldItem="/assets/leafybush.png"/>)}
+          {itemTypes && itemTypes.map(itemType => <Item key={itemType.id} item={itemType}/>)}
         </main>
-        <ul>
-          {itemTypes && itemTypes.map(itemType => <Item key={itemType.id} item={itemType} />)}
-        </ul>
       </div>
     )
   }
