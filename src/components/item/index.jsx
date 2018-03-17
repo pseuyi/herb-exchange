@@ -1,16 +1,16 @@
 import React from 'react';
 import './index.css';
 
-export default ({ item: { id, name, description, image} }) => {
+export default ({ item: { id, name, description, image}, fieldItem }) => {
   return (
-    <li className="item">
-      <div>
+    <div className="item">
+      {/*<div>
         <h4>{name}</h4>
         <p>{description}</p>
-      </div>
+      </div>*/}
       <div>
-        <img width="20%" height="20%" src={image}/>
+        <img width="60%" height="60%" src={fieldItem ? fieldItem : image}/>
       </div>
-    </li>
+    </div>
   )
 }

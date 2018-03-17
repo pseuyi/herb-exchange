@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchTypes } from '../../ducks/types';
+import { fetchTypes } from 'ducks/types';
 
 import Item from 'components/item';
+import './index.css';
 
 class Field extends React.Component {
   componentDidMount() {
@@ -11,13 +12,14 @@ class Field extends React.Component {
 
   render() {
     const { itemTypes } = this.props;
-
     return (
       <div>
         <p>green field</p>
-        <ul>
-          {itemTypes && itemTypes.map(itemType => <Item key={itemType.id} item={itemType} />)}
-        </ul>
+        <main className="field-grid">
+          {itemTypes && itemTypes.map(itemType => <Item key={itemType.id} item={itemType} fieldItem="/assets/bush.png"/>)}
+          {itemTypes && itemTypes.map(itemType => <Item key={itemType.id} item={itemType} fieldItem="/assets/leafybush.png"/>)}
+          {itemTypes && itemTypes.map(itemType => <Item key={itemType.id} item={itemType}/>)}
+        </main>
       </div>
     )
   }
