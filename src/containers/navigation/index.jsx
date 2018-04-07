@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter, NavLink, Route } from 'react-router-dom';
+import './index.css'
 
 class Navigation extends React.Component {
   render () {
@@ -7,6 +8,7 @@ class Navigation extends React.Component {
       <ul className="navigation">
         <li><NavLink exact to="/">to home</NavLink></li>
         <li><NavLink to="/field">to field</NavLink></li>
+        <li><NavLink to="/markets">to markets</NavLink></li>
       </ul>
     )
   }

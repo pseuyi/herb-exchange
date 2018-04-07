@@ -9,7 +9,7 @@ export default ({ item: { id, name, description, image}, fieldItem }) => {
         <p>{description}</p>
       </div>*/}
       <div>
-        <img width="60%" height="60%" src={fieldItem ? fieldItem : image}/>
+        <img width="100px" height="100%" src={fieldItem ? fieldItem : image}/>
       </div>
     </div>
   )

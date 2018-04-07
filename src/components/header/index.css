@@ -1,6 +1,6 @@
 header {
-  display: inline-block;
+  display: block;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 30px;
   color: brown;
 }

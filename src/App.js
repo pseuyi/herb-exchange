@@ -7,6 +7,7 @@ import {
 
 import Home from 'containers/home/';
 import Field from 'containers/field/';
+import Market from 'containers/market/';
 
 import './App.css';
 
@@ -17,6 +18,7 @@ class App extends Component {
         <div className="App">
           <Route exact path="/" component={Home}/>
           <Route exact path="/field" component={Field}/>
+          <Route exact path="/markets" component={Market}/>
         </div>
       </Router>
     );
