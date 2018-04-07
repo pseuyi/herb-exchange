@@ -19,7 +19,7 @@ class Market extends React.Component {
         <p>markets</p>
         <ul>
           { markets && markets.map((mkt, idx) => (
-              <li key={`${mkt.name}-${idx}`}>mkt.name</li>
+              <li key={`${mkt.name}-${idx}`}>{mkt.name}</li>
             ))
           }
         </ul>
