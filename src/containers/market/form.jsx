@@ -4,8 +4,8 @@ import { Form, Field } from 'react-final-form';
 import { createMarket } from 'ducks/markets';
 
 class NewMarketForm extends React.Component {
-  handleSubmit = () => {
-
+  handleSubmit = (data) => {
+    this.props.createMarket({market: data});
   }
   render() {
     return (
