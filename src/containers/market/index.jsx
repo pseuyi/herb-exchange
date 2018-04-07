@@ -4,7 +4,7 @@ import { fetchMarkets } from 'ducks/markets';
 
 import Header from 'components/header';
 import NewMarketForm from './form';
-// import './index.css';
+import './index.css';
 
 class Market extends React.Component {
   componentDidMount() {
@@ -17,9 +17,9 @@ class Market extends React.Component {
       <div>
         <Header/>
         <p>markets</p>
-        <ul>
+        <ul className="market-list">
           { markets && markets.map((mkt, idx) => (
-              <li key={`${mkt.name}-${idx}`}>mkt.name</li>
+              <li key={`${mkt.name}-${idx}`}>{mkt.name}</li>
             ))
           }
         </ul>

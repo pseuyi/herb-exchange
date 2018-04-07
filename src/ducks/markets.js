@@ -38,7 +38,7 @@ export default (state = initialState, action) => {
     case CREATE_MARKET_SUCCESS:
       return {
         ...state,
-        data: Object.assign({}, state.data, action.payload)
+        data: [...state.data, action.payload.data.market]
       }
     default:
       return state;
@@ -57,10 +57,10 @@ export const fetchMarkets = () => async dispatch => {
   }
 }
 
-export const createMarket = () => async dispatch => {
+export const createMarket = (data) => async dispatch => {
   dispatch({ type: CREATE_MARKET });
   try {
-    const market = await axios.post('http://localhost:3001/api/v1/markets');
+    const market = await axios.post('http://localhost:3001/api/v1/markets', data);
     dispatch({ type: CREATE_MARKET_SUCCESS, payload: market });
   }
   catch (err) {
