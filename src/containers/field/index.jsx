@@ -18,9 +18,17 @@ class Field extends React.Component {
         <Header/>
         <p>green field</p>
         <main className="field-grid">
+
           {itemTypes && itemTypes.map(itemType => <Item key={itemType.id} item={itemType} fieldItem="/assets/bush.png"/>)}
+
           {itemTypes && itemTypes.map(itemType => <Item key={itemType.id} item={itemType} fieldItem="/assets/leafybush.png"/>)}
-          {itemTypes && itemTypes.map(itemType => <Item key={itemType.id} item={itemType}/>)}
+
+          {itemTypes && itemTypes.map(itemType => <Item key={itemType.id} item={itemType} fieldItem="/assets/bush.png"/>)}
+
+          {itemTypes && itemTypes.map(itemType => <Item key={itemType.id} item={itemType} fieldItem="/assets/leafybush.png"/>)}
+
+          {itemTypes && itemTypes.map(itemType => <Item key={itemType.id} item={itemType} fieldItem="/assets/bush.png"/>)}
+
         </main>
       </div>
     )
