@@ -1,0 +1,11 @@
+ul.market-list {
+  list-style: none;
+  padding: 0;
+}
+
+.market-list > li {
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 20px;
+  border: solid 1px blue;
+}
